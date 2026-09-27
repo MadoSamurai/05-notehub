@@ -20,7 +20,7 @@ export default function NoteList({ notes }: NoteListProps) {
   return (
     <div className={css.list}>
       {notes.map(note => (
-        <div key={note.id} className={css.card}>
+        <div key={note.id} className={css.listItem}>
           <div className={css.header}>
             <h3 className={css.title}>{note.title}</h3>
           </div>
@@ -28,7 +28,7 @@ export default function NoteList({ notes }: NoteListProps) {
           <div className={css.footer}>
             <span className={css.tag}>{note.tag}</span>
             <button
-              className={css.deleteBtn}
+              className={css.button}
               onClick={() => deleteMutation.mutate(note.id)}
               disabled={deleteMutation.isPending}
             >
