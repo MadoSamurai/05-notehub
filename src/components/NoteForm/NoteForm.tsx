@@ -15,7 +15,7 @@ const validationSchema = Yup.object({
     .required('Title is required'),
   content: Yup.string().max(500, 'Maximum 500 characters'),
   tag: Yup.string()
-    .oneOf(['Todo', 'Work', 'Personal', 'Meeting'], 'Invalid tag')
+    .oneOf(['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'], 'Invalid tag')
     .required('Tag is required'),
 });
 
@@ -71,6 +71,7 @@ export default function NoteForm({ onCancel }: NoteFormProps) {
             <option value="Work">Work</option>
             <option value="Personal">Personal</option>
             <option value="Meeting">Meeting</option>
+            <option value="Shopping">Shopping</option>
           </Field>
           <ErrorMessage name="tag" component="span" className={css.error} />
         </div>
